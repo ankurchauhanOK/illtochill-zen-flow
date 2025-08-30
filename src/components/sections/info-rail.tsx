@@ -16,15 +16,15 @@ function InfoBar({ icon: Icon, title, description, cta, isExpanded, onToggle }: 
     <div 
       className={`
         relative bg-surface border border-divider rounded-lg overflow-hidden 
-        transition-all duration-300 cursor-pointer hover:border-primary/30
-        ${isExpanded ? 'shadow-medium' : 'shadow-soft hover:shadow-medium'}
+        transition-all duration-300 cursor-pointer hover:border-primary/30 info-rail-item
+        ${isExpanded ? 'shadow-medium expanded' : 'shadow-soft hover:shadow-medium'}
       `}
       onClick={onToggle}
     >
       <div className="p-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
+            <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center rail-icon">
               <Icon className="w-6 h-6 text-primary-foreground" />
             </div>
             <h3 className="font-heading font-semibold text-xl text-foreground">
@@ -85,16 +85,16 @@ export function InfoRail() {
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section className="py-20 px-4 section-reveal">
       <div className="container mx-auto max-w-6xl">
         <div className="grid lg:grid-cols-12 gap-8 items-start">
           {/* Left Label */}
           <div className="lg:col-span-3">
             <div className="lg:sticky lg:top-8">
-              <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mb-4 lg:transform lg:-rotate-6 lg:origin-left">
+              <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mb-4 lg:transform lg:-rotate-6 lg:origin-left clip-reveal-title">
                 All you need to know :)
               </h2>
-              <p className="font-body text-subtext leading-relaxed">
+              <p className="font-body text-subtext leading-relaxed reveal-content">
                 Everything about our mission, community, and how we support your journey.
               </p>
             </div>

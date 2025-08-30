@@ -17,7 +17,7 @@ export function Navigation() {
     if (stored !== null) {
       const enabled = stored === 'true';
       setMotionEnabled(enabled);
-      document.documentElement.classList.toggle('motion-reduce', !enabled);
+      document.body.dataset.animations = enabled ? 'on' : 'off';
     }
   }, []);
 
@@ -25,7 +25,7 @@ export function Navigation() {
     const newValue = !motionEnabled;
     setMotionEnabled(newValue);
     localStorage.setItem('motion-enabled', newValue.toString());
-    document.documentElement.classList.toggle('motion-reduce', !newValue);
+    document.body.dataset.animations = newValue ? 'on' : 'off';
   };
 
   return (

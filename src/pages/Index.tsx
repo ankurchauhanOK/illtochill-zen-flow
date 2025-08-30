@@ -4,6 +4,7 @@ import { CategoryGrid } from '../components/sections/category-grid';
 import { CustomerStories } from '../components/sections/customer-stories';
 import { InfoRail } from '../components/sections/info-rail';
 import { Footer } from '../components/sections/footer';
+import { AnimationProvider } from '../components/AnimationProvider';
 
 const Index = () => {
   const chronicCategories = [
@@ -63,48 +64,50 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background font-body">
-      <Navigation />
-      
-      <main id="main">
-        <HeroSection />
+    <AnimationProvider>
+      <div className="min-h-screen bg-background font-body">
+        <Navigation />
         
-        <CategoryGrid 
-          title="Chronic Conditions"
-          subtitle="Shop statements for lived experiences that celebrate your resilience."
-          categories={chronicCategories}
-        />
-        
-        {/* Secondary Links */}
-        <section className="py-8 bg-surface/30">
-          <div className="container mx-auto px-4 text-center">
-            <div className="flex flex-wrap justify-center gap-6 text-subtext">
-              <a href="/stories" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2 rounded">
-                Explore lineup stories
-              </a>
-              <a href="/sizing" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2 rounded">
-                See sizing & comfort
-              </a>
-              <a href="/impact" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2 rounded">
-                How purchases help
-              </a>
+        <main id="main">
+          <HeroSection />
+          
+          <CategoryGrid 
+            title="Chronic Conditions"
+            subtitle="Shop statements for lived experiences that celebrate your resilience."
+            categories={chronicCategories}
+          />
+          
+          {/* Secondary Links */}
+          <section className="py-8 bg-surface/30 section-reveal">
+            <div className="container mx-auto px-4 text-center">
+              <div className="flex flex-wrap justify-center gap-6 text-subtext reveal-content">
+                <a href="/stories" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2 rounded">
+                  Explore lineup stories
+                </a>
+                <a href="/sizing" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2 rounded">
+                  See sizing & comfort
+                </a>
+                <a href="/impact" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2 rounded">
+                  How purchases help
+                </a>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+          
+          <CategoryGrid 
+            title="Mental Health"
+            subtitle="Designs that speak to your journey with understanding and empowerment."
+            categories={mentalCategories}
+          />
+          
+          <CustomerStories />
+          
+          <InfoRail />
+        </main>
         
-        <CategoryGrid 
-          title="Mental Health"
-          subtitle="Designs that speak to your journey with understanding and empowerment."
-          categories={mentalCategories}
-        />
-        
-        <CustomerStories />
-        
-        <InfoRail />
-      </main>
-      
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </AnimationProvider>
   );
 };
 

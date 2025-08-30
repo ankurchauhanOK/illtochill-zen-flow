@@ -19,9 +19,8 @@ function CategoryTile({ title, description, size = 'medium', delay = 0 }: Catego
     <div 
       className={`
         relative bg-surface border border-divider rounded-lg overflow-hidden 
-        group hover:border-primary/30 hover:-translate-y-1 hover:scale-[1.01] 
-        transition-all duration-300 shadow-soft hover:shadow-medium
-        min-h-[200px] ${sizeClasses[size]}
+        group transition-all duration-300 shadow-soft hover:shadow-medium
+        min-h-[200px] ${sizeClasses[size]} grid-tile
       `}
       style={{ animationDelay: `${delay}ms` }}
     >
@@ -58,20 +57,20 @@ interface CategoryGridProps {
 
 export function CategoryGrid({ title, subtitle, categories }: CategoryGridProps) {
   return (
-    <section className="py-20 px-4">
+    <section className="py-20 px-4 section-reveal">
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-4xl md:text-5xl text-foreground mb-4">
+          <h2 className="font-heading font-bold text-4xl md:text-5xl text-foreground mb-4 clip-reveal-title">
             {title}
           </h2>
-          <p className="font-body text-xl text-subtext max-w-2xl mx-auto">
+          <p className="font-body text-xl text-subtext max-w-2xl mx-auto reveal-content">
             {subtitle}
           </p>
         </div>
 
         {/* Masonry Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-auto grid-cascade">
           {categories.map((category, index) => (
             <CategoryTile
               key={category.title}

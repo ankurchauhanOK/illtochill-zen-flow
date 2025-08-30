@@ -70,7 +70,16 @@
     --duration-slow: 360ms;
     --ease-smooth: cubic-bezier(0.2, 0.6, 0.2, 1);
     --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    
+
+    /* Animation Tokens */
+    --stagger-base: 80ms;
+    --stagger-fast: 60ms;
+    --stagger-slow: 120ms;
+    --parallax-distance: 18px;
+    --hero-shrink-scale: 0.94;
+    --tile-lift: 20px;
+    --micro-lift: 6px;
+
     /* Focus Ring */
     --focus-ring: 0 0 0 3px hsl(var(--primary) / 0.3);
   }
@@ -128,6 +137,161 @@
   *:focus-visible {
     outline: 2px solid hsl(var(--primary)) !important;
     outline-offset: 2px !important;
+  }
+
+  /* ========== SCROLL-DRIVEN ANIMATIONS ========== */
+  
+  /* Hero shrink effect - scroll-driven */
+  .hero-shrink {
+    animation-name: hero-shrink;
+    animation-timeline: view();
+    animation-range: exit 0% exit 100%;
+    animation-fill-mode: forwards;
+  }
+
+  /* Section reveal animations */
+  .section-reveal {
+    view-timeline-name: --section;
+    view-timeline-axis: block;
+  }
+
+  .section-reveal .reveal-headline {
+    opacity: 0;
+    transform: translateX(-24px);
+    animation: slide-in-left 600ms ease-out forwards;
+    animation-timeline: --section;
+    animation-range: entry 15% entry 60%;
+  }
+
+  .section-reveal .reveal-visual {
+    opacity: 0;
+    transform: translateX(24px);
+    animation: slide-in-right 600ms ease-out forwards;
+    animation-timeline: --section;
+    animation-range: entry 15% entry 60%;
+  }
+
+  .section-reveal .reveal-content {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fade-in-up 500ms ease-out forwards;
+    animation-timeline: --section;
+    animation-range: entry 20% entry 70%;
+  }
+
+  /* Staggered content reveals */
+  .reveal-content:nth-child(1) { animation-delay: 0ms; }
+  .reveal-content:nth-child(2) { animation-delay: 80ms; }
+  .reveal-content:nth-child(3) { animation-delay: 160ms; }
+  .reveal-content:nth-child(4) { animation-delay: 240ms; }
+
+  /* Grid cascade animations */
+  .grid-cascade .grid-tile {
+    opacity: 0;
+    transform: translateY(var(--tile-lift)) rotate(-1.5deg);
+    animation: tile-cascade 700ms ease-out forwards;
+  }
+
+  .grid-tile:nth-child(1) { animation-delay: 0ms; }
+  .grid-tile:nth-child(2) { animation-delay: 60ms; }
+  .grid-tile:nth-child(3) { animation-delay: 120ms; }
+  .grid-tile:nth-child(4) { animation-delay: 180ms; }
+  .grid-tile:nth-child(5) { animation-delay: 240ms; }
+  .grid-tile:nth-child(6) { animation-delay: 300ms; }
+
+  /* Tile hover micro-interactions */
+  .grid-tile {
+    transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+  }
+  .grid-tile:hover {
+    transform: translateY(calc(var(--micro-lift) * -1)) scale(1.01);
+    box-shadow: var(--shadow-strong);
+  }
+
+  /* Parallax backgrounds */
+  .parallax-bg {
+    transform: translateY(calc(var(--parallax-distance) * var(--scroll-progress, 0)));
+  }
+
+  /* Clip-reveal titles */
+  .clip-reveal-title {
+    clip-path: inset(0 100% 0 0);
+    animation: clip-reveal 800ms ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 10% entry 50%;
+  }
+
+  /* Customer story carousel center focus */
+  .carousel-card {
+    transition: transform 300ms ease-out, filter 300ms ease-out;
+    transform: scale(0.98);
+    filter: saturate(0.8);
+  }
+
+  .carousel-card.center-focused {
+    transform: scale(1.05);
+    filter: saturate(1) brightness(1.1);
+  }
+
+  /* Info rail expansions */
+  .info-rail-item {
+    transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .info-rail-item.in-view {
+    transform: scaleY(1.02);
+  }
+
+  .info-rail-item .rail-icon {
+    transition: transform 300ms ease-out;
+  }
+
+  .info-rail-item.expanded .rail-icon {
+    transform: rotate(90deg);
+  }
+
+  /* Reduced motion fallbacks */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-shrink,
+    .section-reveal *,
+    .grid-cascade *,
+    .parallax-bg,
+    .clip-reveal-title {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+      clip-path: none !important;
+    }
+
+    .grid-tile:hover {
+      transform: none;
+    }
+
+    .carousel-card {
+      transform: none;
+      filter: none;
+    }
+  }
+
+  /* Manual animation toggle off */
+  body[data-animations="off"] .hero-shrink,
+  body[data-animations="off"] .section-reveal *,
+  body[data-animations="off"] .grid-cascade *,
+  body[data-animations="off"] .parallax-bg,
+  body[data-animations="off"] .clip-reveal-title {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+
+  body[data-animations="off"] .grid-tile:hover {
+    transform: none;
+  }
+
+  body[data-animations="off"] .carousel-card {
+    transform: none;
+    filter: none;
   }
 
   /* Benefit chips styling */

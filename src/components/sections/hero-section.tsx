@@ -2,7 +2,7 @@ import { Button } from '../ui/button';
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden hero-shrink">
       {/* Background Video/Motion */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-surface to-background">
         {/* Dark overlay for text contrast */}
@@ -16,25 +16,25 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <h1 className="font-heading font-bold text-4xl md:text-6xl lg:text-7xl mb-4 md:mb-6 text-foreground leading-tight">
+        <h1 className="font-heading font-bold text-4xl md:text-6xl lg:text-7xl mb-4 md:mb-6 text-foreground leading-tight reveal-headline">
           Wear strength.{' '}
           <span className="bg-gradient-primary bg-clip-text text-transparent">
             Share hope.
           </span>
         </h1>
         
-        <p className="font-body text-lg md:text-xl text-subtext mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed">
+        <p className="font-body text-lg md:text-xl text-subtext mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed reveal-content">
           Motivational clothing and stickers crafted to uplift people living with mental health and chronic conditions—and everyone who stands with them.
         </p>
 
-        <div className="mb-6">
+        <div className="mb-6 reveal-content">
           <Button variant="hero" size="lg" className="px-8">
             Shop statements
           </Button>
         </div>
 
         {/* Benefit chips */}
-        <div className="flex flex-wrap justify-center gap-3 mb-8 max-w-2xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-3 mb-8 max-w-2xl mx-auto reveal-content">
           <span className="benefit-chip">Comfort-first fits</span>
           <span className="benefit-chip">Uplifting designs</span>
           <span className="benefit-chip">A share goes to support resources</span>
