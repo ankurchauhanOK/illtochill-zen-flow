@@ -132,7 +132,7 @@
 
   /* Benefit chips styling */
   .benefit-chip {
-    @apply inline-flex items-center px-3 py-1.5 text-sm font-medium bg-surface/80 backdrop-blur-sm border border-divider/50 rounded-full text-subtext transition-all duration-[var(--duration-fast)];
+    @apply inline-flex items-center px-3 py-1.5 text-sm font-medium bg-surface/80 backdrop-blur-sm border border-divider/50 rounded-full text-subtext transition-all duration-200;
   }
   .benefit-chip:hover {
     @apply bg-surface border-primary/30 text-foreground;
