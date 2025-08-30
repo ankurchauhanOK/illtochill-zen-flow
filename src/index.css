@@ -2,74 +2,95 @@
 @tailwind components;
 @tailwind utilities;
 
-/* IllToChill Design System - Premium Dark Theme for Mental Health & Chronic Conditions */
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
 
 @layer base {
   :root {
-    /* Core Brand Colors */
-    --background: 216 13% 7%;          /* #121212 - Deep background */
-    --foreground: 216 6% 85%;          /* #D9D9E0 - Primary text */
-    
-    --surface: 216 13% 9%;             /* #171A1F - Cards, panels */
-    --surface-elevated: 216 13% 12%;   /* Elevated surfaces */
-    
-    --divider: 216 13% 15%;            /* #262B33 - Borders, dividers */
-    --subtext: 216 8% 67%;             /* #A9AFB8 - Secondary text */
-    
-    /* Brand Gradients */
-    --primary-start: 178 48% 42%;      /* #3AA6A0 - Teal start */
-    --primary-end: 176 44% 58%;        /* #6BC1BD - Teal end */
-    --primary: 177 46% 50%;            /* Average for single use */
-    --primary-foreground: 0 0% 100%;   /* White text on primary */
-    
-    --success: 156 29% 56%;            /* #6BAF92 - Success green */
-    --success-foreground: 0 0% 100%;
-    
-    /* Component Colors */
-    --card: var(--surface);
-    --card-foreground: var(--foreground);
-    
-    --popover: var(--surface-elevated);
-    --popover-foreground: var(--foreground);
-    
-    --secondary: var(--surface-elevated);
-    --secondary-foreground: var(--foreground);
-    
-    --muted: var(--divider);
-    --muted-foreground: var(--subtext);
-    
-    --accent: var(--surface-elevated);
-    --accent-foreground: var(--foreground);
-    
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    
-    --border: var(--divider);
-    --input: var(--divider);
-    --ring: var(--primary);
-    
-    --radius: 0.75rem;                 /* 12px base radius */
-    --radius-lg: 1rem;                 /* 16px for cards */
-    
-    /* Navigation Colors */
-    --nav-background: 216 13% 9%;      /* Surface with opacity for glass effect */
-    --nav-foreground: var(--foreground);
-    
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary-start)), hsl(var(--primary-end)));
-    --gradient-surface: linear-gradient(145deg, hsl(var(--surface)), hsl(var(--surface-elevated)));
-    
-    /* Shadows */
-    --shadow-soft: 0 4px 12px hsl(0 0% 0% / 0.15);
-    --shadow-medium: 0 8px 24px hsl(0 0% 0% / 0.25);
-    --shadow-strong: 0 16px 48px hsl(0 0% 0% / 0.35);
-    
-    /* Animation Easings */
-    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    
-    /* Focus Ring */
-    --focus-ring: 0 0 0 3px hsl(var(--primary) / 0.3);
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -79,35 +100,6 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body antialiased;
-    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
-  }
-
-  /* Accessibility: Respect reduced motion preferences */
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
-  }
-
-  /* Hide scrollbar for horizontal scroll areas */
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Ensure focus visibility for accessibility */
-  .focus-visible {
-    outline: 2px solid hsl(var(--primary));
-    outline-offset: 2px;
+    @apply bg-background text-foreground;
   }
 }
