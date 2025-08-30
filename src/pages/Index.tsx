@@ -66,7 +66,7 @@ const Index = () => {
     <div className="min-h-screen bg-background font-body">
       <Navigation />
       
-      <main>
+      <main id="main">
         <HeroSection />
         
         <CategoryGrid 
@@ -74,6 +74,23 @@ const Index = () => {
           subtitle="Shop statements for lived experiences that celebrate your resilience."
           categories={chronicCategories}
         />
+        
+        {/* Secondary Links */}
+        <section className="py-8 bg-surface/30">
+          <div className="container mx-auto px-4 text-center">
+            <div className="flex flex-wrap justify-center gap-6 text-subtext">
+              <a href="/stories" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2 rounded">
+                Explore lineup stories
+              </a>
+              <a href="/sizing" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2 rounded">
+                See sizing & comfort
+              </a>
+              <a href="/impact" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2 rounded">
+                How purchases help
+              </a>
+            </div>
+          </div>
+        </section>
         
         <CategoryGrid 
           title="Mental Health"
