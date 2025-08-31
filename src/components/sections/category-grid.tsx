@@ -8,7 +8,7 @@ interface CategoryTileProps {
   delay?: number;
 }
 
-function CategoryTile({ title, description, size = 'medium', delay = 0, className = '' }: CategoryTileProps & { className?: string }) {
+function CategoryTile({ title, description, size = 'medium', delay = 0 }: CategoryTileProps) {
   const sizeClasses = {
     small: 'md:row-span-1 md:col-span-1',
     medium: 'md:row-span-2 md:col-span-1',
@@ -20,7 +20,7 @@ function CategoryTile({ title, description, size = 'medium', delay = 0, classNam
       className={`
         relative bg-surface border border-divider rounded-lg overflow-hidden 
         group transition-all duration-300 shadow-soft hover:shadow-medium
-        min-h-[200px] ${sizeClasses[size]} grid-tile ${className}
+        min-h-[200px] ${sizeClasses[size]} grid-tile
       `}
       style={{ animationDelay: `${delay}ms` }}
     >
@@ -55,13 +55,10 @@ interface CategoryGridProps {
   }>;
 }
 
-export function CategoryGrid({ title, subtitle, categories, id, trackId, isHorizontal = false }: CategoryGridProps & { id?: string; trackId?: string; isHorizontal?: boolean }) {
-  const sectionClass = isHorizontal ? "min-h-screen py-0" : "py-20 px-4";
-  const containerClass = isHorizontal ? "h-screen flex items-center" : "container mx-auto max-w-6xl";
-  
+export function CategoryGrid({ title, subtitle, categories }: CategoryGridProps) {
   return (
-    <section id={id} className={`${sectionClass} section-reveal`}>
-      <div className={containerClass}>
+    <section className="py-20 px-4 section-reveal">
+      <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-heading font-bold text-4xl md:text-5xl text-foreground mb-4 clip-reveal-title">
@@ -72,34 +69,18 @@ export function CategoryGrid({ title, subtitle, categories, id, trackId, isHoriz
           </p>
         </div>
 
-        {/* Grid or Horizontal Track */}
-        {isHorizontal ? (
-          <div id={trackId} className="flex gap-8 will-change-transform">
-            {categories.map((category, index) => (
-              <div key={category.title} className="flex-shrink-0 w-80">
-                <CategoryTile
-                  title={category.title}
-                  description={category.description}
-                  size={category.size}
-                  delay={index * 100}
-                  className={trackId === 'chronic-track' ? 'chronic-card' : 'mental-card'}
-                />
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-auto grid-cascade">
-            {categories.map((category, index) => (
-              <CategoryTile
-                key={category.title}
-                title={category.title}
-                description={category.description}
-                size={category.size}
-                delay={index * 100}
-              />
-            ))}
-          </div>
-        )}
+        {/* Masonry Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-auto grid-cascade">
+          {categories.map((category, index) => (
+            <CategoryTile
+              key={category.title}
+              title={category.title}
+              description={category.description}
+              size={category.size}
+              delay={index * 100}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

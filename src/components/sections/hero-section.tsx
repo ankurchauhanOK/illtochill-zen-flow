@@ -2,7 +2,7 @@ import { Button } from '../ui/button';
 
 export function HeroSection() {
   return (
-    <section id="hero" className="relative min-h-[100vh] flex items-center justify-center overflow-hidden hero-shrink">
+    <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden hero-shrink">
       {/* Background Video/Motion */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-surface to-background">
         {/* Dark overlay for text contrast */}

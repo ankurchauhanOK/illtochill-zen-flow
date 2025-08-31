@@ -99,7 +99,7 @@ export function CustomerStories() {
   ];
 
   return (
-    <section className="py-20 px-4 bg-surface-elevated/30 section-reveal stories-section">
+    <section className="py-20 px-4 bg-surface-elevated/30 section-reveal">
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
         <div className="text-center mb-16">
