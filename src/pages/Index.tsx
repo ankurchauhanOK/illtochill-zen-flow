@@ -5,8 +5,10 @@ import { CustomerStories } from '../components/sections/customer-stories';
 import { InfoRail } from '../components/sections/info-rail';
 import { Footer } from '../components/sections/footer';
 import { AnimationProvider } from '../components/AnimationProvider';
+import { useGSAPAnimations } from '../hooks/use-gsap-animations';
 
 const Index = () => {
+  useGSAPAnimations();
   const chronicCategories = [
     {
       title: "Chronic Pain",
@@ -71,11 +73,16 @@ const Index = () => {
         <main id="main">
           <HeroSection />
           
-          <CategoryGrid 
-            title="Chronic Conditions"
-            subtitle="Shop statements for lived experiences that celebrate your resilience."
-            categories={chronicCategories}
-          />
+          <div id="chronic-section" className="relative z-10 bg-background">
+            <CategoryGrid 
+              title="Chronic Conditions"
+              subtitle="Shop statements for lived experiences that celebrate your resilience."
+              categories={chronicCategories}
+              id="chronic-horizontal"
+              trackId="chronic-track"
+              isHorizontal={true}
+            />
+          </div>
           
           {/* Secondary Links */}
           <section className="py-8 bg-surface/30 section-reveal">
@@ -94,11 +101,16 @@ const Index = () => {
             </div>
           </section>
           
-          <CategoryGrid 
-            title="Mental Health"
-            subtitle="Designs that speak to your journey with understanding and empowerment."
-            categories={mentalCategories}
-          />
+          <div id="mental-section" className="relative z-10 bg-background">
+            <CategoryGrid 
+              title="Mental Health"
+              subtitle="Designs that speak to your journey with understanding and empowerment."
+              categories={mentalCategories}
+              id="mental-horizontal"
+              trackId="mental-track"
+              isHorizontal={true}
+            />
+          </div>
           
           <CustomerStories />
           

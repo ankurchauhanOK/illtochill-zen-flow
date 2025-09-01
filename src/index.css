@@ -271,6 +271,18 @@
       transform: none;
       filter: none;
     }
+
+    /* GSAP elements */
+    .chronic-card,
+    .mental-card {
+      transform: none !important;
+      opacity: 1 !important;
+    }
+  }
+
+  /* GSAP Performance optimizations */
+  .will-change-transform {
+    will-change: transform;
   }
 
   /* Manual animation toggle off */
