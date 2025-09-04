@@ -13,31 +13,71 @@ export const siteContent = {
     video: "https://res.cloudinary.com/demo/video/upload/v1/samples/cld-sample-video.mp4", // Placeholder video
     columns: [
       [
-        { title: "Chronic Pain Hoodie", slug: "/collections/chronic-pain", kind: "hoodie", h: 64 },
-        { title: "Autoimmune Sticker", slug: "/products/autoimmune-sticker", kind: "sticker", h: 40 },
-        { title: "Chronic Fatigue Tee", slug: "/products/chronic-fatigue-tee", kind: "tshirt", h: 56 }
+        { title: "Chronic Pain Warrior", slug: "/products/chronic-pain-hoodie", kind: "hoodie", h: 60 },
+        { title: "Spoon Theory Club", slug: "/products/spoon-theory-tee", kind: "tshirt", h: 45 },
+        { title: "Invisible Illness Fighter", slug: "/products/invisible-illness-cap", kind: "cap", h: 40 },
+        { title: "Pain Don't Stop Me", slug: "/products/pain-strength-hoodie", kind: "hoodie", h: 55 }
       ],
       [
-        { title: "Migraine Survivor Cap", slug: "/products/migraine-cap", kind: "cap", h: 48 },
-        { title: "Fibromyalgia Shirt", slug: "/products/fibro-shirt", kind: "tshirt", h: 72 },
-        { title: "Autoimmune Hoodie", slug: "/products/autoimmune-hoodie", kind: "hoodie", h: 52 }
+        { title: "Autoimmune Sticker Pack", slug: "/products/autoimmune-stickers", kind: "sticker", h: 35 },
+        { title: "Fibromyalgia Strong", slug: "/products/fibro-strength-tee", kind: "tshirt", h: 50 },
+        { title: "Migraine Survivor", slug: "/products/migraine-cap", kind: "cap", h: 40 },
+        { title: "Autoimmune Warrior", slug: "/products/autoimmune-hoodie", kind: "hoodie", h: 65 }
+      ],
+      [
+        { title: "Chronic Fatigue Truth", slug: "/products/chronic-fatigue-tee", kind: "tshirt", h: 45 },
+        { title: "Endometriosis Fighter", slug: "/products/endo-warrior-hoodie", kind: "hoodie", h: 60 },
+        { title: "POTS Awareness", slug: "/products/pots-awareness-tee", kind: "tshirt", h: 50 },
+        { title: "Lupus Strength", slug: "/products/lupus-strong-cap", kind: "cap", h: 40 }
+      ],
+      [
+        { title: "EDS Zebra Pride", slug: "/products/eds-zebra-hoodie", kind: "hoodie", h: 58 },
+        { title: "Chronic Illness Club", slug: "/products/chronic-club-tee", kind: "tshirt", h: 47 },
+        { title: "Gastroparesis Fighter", slug: "/products/gastroparesis-tee", kind: "tshirt", h: 52 },
+        { title: "Crohn's Warrior", slug: "/products/crohns-warrior-hoodie", kind: "hoodie", h: 62 }
+      ],
+      [
+        { title: "MS Strong", slug: "/products/ms-strength-tee", kind: "tshirt", h: 48 },
+        { title: "Arthritis Warrior", slug: "/products/arthritis-fighter-cap", kind: "cap", h: 42 },
+        { title: "Diabetes Type 1", slug: "/products/t1d-warrior-hoodie", kind: "hoodie", h: 55 },
+        { title: "Spoonie Life", slug: "/products/spoonie-life-sticker", kind: "sticker", h: 38 }
       ]
     ]
   },
   mental: {
-    heading: "Mental Conditions",
+    heading: "Mental Health",
     subheading: "Give feelings a voice. Wear your truth.",
     video: "https://res.cloudinary.com/demo/video/upload/v1/samples/cld-sample-video.mp4", // Placeholder video
     columns: [
       [
-        { title: "Anxiety Hoodie", slug: "/products/anxiety-hoodie", kind: "hoodie", h: 56 },
-        { title: "Depression Sticker", slug: "/products/depression-sticker", kind: "sticker", h: 72 },
-        { title: "PTSD Cap", slug: "/products/ptsd-cap", kind: "cap", h: 48 }
+        { title: "Anxiety Warrior", slug: "/products/anxiety-warrior-hoodie", kind: "hoodie", h: 55 },
+        { title: "Depression Fighter", slug: "/products/depression-strength-tee", kind: "tshirt", h: 45 },
+        { title: "PTSD Survivor", slug: "/products/ptsd-survivor-cap", kind: "cap", h: 40 },
+        { title: "Mental Health Matters", slug: "/products/mh-matters-sticker", kind: "sticker", h: 35 }
       ],
       [
-        { title: "BPD Tee", slug: "/products/bpd-tee", kind: "tshirt", h: 64 },
-        { title: "OCD Shirt", slug: "/products/ocd-shirt", kind: "tshirt", h: 40 },
-        { title: "ADHD Hoodie", slug: "/products/adhd-hoodie", kind: "hoodie", h: 60 }
+        { title: "BPD Understanding", slug: "/products/bpd-awareness-tee", kind: "tshirt", h: 50 },
+        { title: "OCD Truth", slug: "/products/ocd-truth-hoodie", kind: "hoodie", h: 60 },
+        { title: "ADHD Brain", slug: "/products/adhd-brain-tee", kind: "tshirt", h: 47 },
+        { title: "Bipolar Strong", slug: "/products/bipolar-strength-cap", kind: "cap", h: 42 }
+      ],
+      [
+        { title: "Panic Attack Survivor", slug: "/products/panic-survivor-hoodie", kind: "hoodie", h: 58 },
+        { title: "Social Anxiety Club", slug: "/products/social-anxiety-tee", kind: "tshirt", h: 48 },
+        { title: "Therapy Squad", slug: "/products/therapy-squad-sticker", kind: "sticker", h: 38 },
+        { title: "Self Care First", slug: "/products/self-care-hoodie", kind: "hoodie", h: 62 }
+      ],
+      [
+        { title: "Neurodivergent Pride", slug: "/products/neurodivergent-tee", kind: "tshirt", h: 52 },
+        { title: "Mental Health Break", slug: "/products/mh-break-cap", kind: "cap", h: 40 },
+        { title: "Autism Acceptance", slug: "/products/autism-pride-hoodie", kind: "hoodie", h: 56 },
+        { title: "Trauma Survivor", slug: "/products/trauma-survivor-tee", kind: "tshirt", h: 49 }
+      ],
+      [
+        { title: "Mindfulness Matters", slug: "/products/mindfulness-sticker", kind: "sticker", h: 36 },
+        { title: "Recovery Journey", slug: "/products/recovery-hoodie", kind: "hoodie", h: 59 },
+        { title: "Emotional Support", slug: "/products/emotional-support-tee", kind: "tshirt", h: 46 },
+        { title: "Mental Strength", slug: "/products/mental-strength-cap", kind: "cap", h: 41 }
       ]
     ]
   },
