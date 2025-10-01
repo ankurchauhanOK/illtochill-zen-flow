@@ -64,8 +64,11 @@
     --shadow-medium: 0 8px 24px hsl(0 0% 0% / 0.25);
     --shadow-strong: 0 16px 48px hsl(0 0% 0% / 0.35);
     
-    /* Animation Easings */
-    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    /* Motion Tokens */
+    --duration-fast: 160ms;
+    --duration-medium: 240ms;
+    --duration-slow: 360ms;
+    --ease-smooth: cubic-bezier(0.2, 0.6, 0.2, 1);
     --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     
     /* Focus Ring */
@@ -87,6 +90,21 @@
     @apply font-heading;
   }
 
+  /* Skip to content link */
+  .skip-link {
+    @apply absolute top-0 left-0 z-[100] px-4 py-2 bg-primary text-primary-foreground rounded-br-md transform -translate-y-full opacity-0 transition-all duration-200;
+  }
+  .skip-link:focus {
+    @apply translate-y-0 opacity-100;
+  }
+
+  /* Motion control */
+  .motion-reduce *, .motion-reduce *::before, .motion-reduce *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
   /* Accessibility: Respect reduced motion preferences */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -105,9 +123,18 @@
     display: none;
   }
 
-  /* Ensure focus visibility for accessibility */
-  .focus-visible {
-    outline: 2px solid hsl(var(--primary));
-    outline-offset: 2px;
+  /* Enhanced focus visibility for accessibility */
+  .focus-visible,
+  *:focus-visible {
+    outline: 2px solid hsl(var(--primary)) !important;
+    outline-offset: 2px !important;
+  }
+
+  /* Benefit chips styling */
+  .benefit-chip {
+    @apply inline-flex items-center px-3 py-1.5 text-sm font-medium bg-surface/80 backdrop-blur-sm border border-divider/50 rounded-full text-subtext transition-all duration-200;
+  }
+  .benefit-chip:hover {
+    @apply bg-surface border-primary/30 text-foreground;
   }
 }
