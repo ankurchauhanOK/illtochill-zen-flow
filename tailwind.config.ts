@@ -93,7 +93,7 @@ export default {
 					from: { height: 'var(--radix-accordion-content-height)', opacity: '1' },
 					to: { height: '0', opacity: '0' }
 				},
-				// Hero shrink animation
+				// Scroll-driven hero shrink animation
 				'hero-shrink': {
 					'0%': { 
 						transform: 'scale(1)', 
@@ -101,63 +101,39 @@ export default {
 						clipPath: 'inset(0px)'
 					},
 					'100%': { 
-						transform: 'scale(var(--hero-shrink-scale))', 
+						transform: 'scale(0.9)', 
 						borderRadius: '32px',
-						clipPath: 'inset(40px)'
+						clipPath: 'inset(48px)'
 					}
 				},
-				// Section reveal animations
-				'slide-in-left': {
-					'0%': { opacity: '0', transform: 'translateX(-24px)' },
-					'100%': { opacity: '1', transform: 'translateX(0px)' }
-				},
-				'slide-in-right': {
-					'0%': { opacity: '0', transform: 'translateX(24px)' },
-					'100%': { opacity: '1', transform: 'translateX(0px)' }
-				},
+				// Fade and slide animations
 				'fade-in-up': {
-					'0%': { opacity: '0', transform: 'translateY(16px)' },
+					'0%': { opacity: '0', transform: 'translateY(40px)' },
 					'100%': { opacity: '1', transform: 'translateY(0px)' }
 				},
-				// Grid cascade animation
-				'tile-cascade': {
-					'0%': { 
-						opacity: '0', 
-						transform: 'translateY(var(--tile-lift)) rotate(-1.5deg)' 
-					},
-					'100%': { 
-						opacity: '1', 
-						transform: 'translateY(0px) rotate(0deg)' 
-					}
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
 				},
-				// Clip reveal animation
-				'clip-reveal': {
-					'0%': { clipPath: 'inset(0 100% 0 0)' },
-					'100%': { clipPath: 'inset(0 0 0 0)' }
+				// Masonry tile entry
+				'tile-entry': {
+					'0%': { opacity: '0', transform: 'translateY(30px) scale(0.95)' },
+					'100%': { opacity: '1', transform: 'translateY(0px) scale(1)' }
 				},
-				// Carousel focus animation
-				'carousel-focus': {
+				// Carousel card focus
+				'card-focus': {
 					'0%': { transform: 'scale(0.98)', filter: 'saturate(0.8)' },
-					'100%': { transform: 'scale(1.05)', filter: 'saturate(1) brightness(1.1)' }
-				},
-				// Info rail spring
-				'rail-spring': {
-					'0%': { transform: 'scaleY(1)' },
-					'50%': { transform: 'scaleY(1.05)' },
-					'100%': { transform: 'scaleY(1.02)' }
+					'100%': { transform: 'scale(1.05)', filter: 'saturate(1)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'hero-shrink': 'hero-shrink linear',
-				'slide-in-left': 'slide-in-left 0.6s ease-out',
-				'slide-in-right': 'slide-in-right 0.6s ease-out',
-				'fade-in-up': 'fade-in-up 0.5s ease-out',
-				'tile-cascade': 'tile-cascade 0.7s ease-out',
-				'clip-reveal': 'clip-reveal 0.8s ease-out',
-				'carousel-focus': 'carousel-focus 0.3s ease-out',
-				'rail-spring': 'rail-spring 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)'
+				'fade-in-up': 'fade-in-up 0.6s var(--ease-smooth)',
+				'fade-in': 'fade-in 0.4s var(--ease-smooth)',
+				'tile-entry': 'tile-entry 0.5s var(--ease-smooth)',
+				'card-focus': 'card-focus 0.3s var(--ease-smooth)'
 			},
 			transitionTimingFunction: {
 				'smooth': 'var(--ease-smooth)',

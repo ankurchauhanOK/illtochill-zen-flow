@@ -99,25 +99,23 @@ export function CustomerStories() {
   ];
 
   return (
-    <section className="py-20 px-4 bg-surface-elevated/30 section-reveal">
+    <section className="py-20 px-4 bg-surface-elevated/30">
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-4xl md:text-5xl text-foreground mb-4 clip-reveal-title">
+          <h2 className="font-heading font-bold text-4xl md:text-5xl text-foreground mb-4">
             Customer Stories
           </h2>
-          <p className="font-body text-xl text-subtext max-w-2xl mx-auto reveal-content">
+          <p className="font-body text-xl text-subtext max-w-2xl mx-auto">
             Real people sharing how our designs made them feel seen, heard, and empowered.
           </p>
         </div>
 
         {/* Horizontal Scroll Container */}
         <div className="relative">
-          <div className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide" id="stories-carousel">
+          <div className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide">
             {reviews.map((review, index) => (
-              <div key={index} className="carousel-card">
-                <ReviewCard {...review} />
-              </div>
+              <ReviewCard key={index} {...review} />
             ))}
           </div>
           
